@@ -1,0 +1,31 @@
+version: 1
+project:
+  id: ai-infra-learning
+  title: AI Infra Learning
+  description: 用笔记、实验和可视化建立 AI 系统的执行模型。
+  github: https://github.com/mindorigin150/ai-infra-learning
+  toc:
+    - file: README.md
+    - title: 学习与导航
+      children:
+        - file: paths/start-here.md
+        - file: topics/README.md
+        - file: GAPS.md
+    - title: 性能模型 · 示例
+      children:
+        - file: topics/foundations/performance-model/README.md
+        - file: topics/foundations/performance-model/lab.ipynb
+    - title: 工作约定
+      children:
+        - file: projects/README.md
+        - file: STYLE.md
+        - file: AGENTS.md
+  exclude:
+    - templates/**
+    - inbox/**
+    - '**/.runs/**'
+site:
+  template: book-theme
+  options:
+    folders: true
+    style: assets/styles/site.css

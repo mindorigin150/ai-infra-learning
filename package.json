@@ -1,0 +1,12 @@
+{
+  "name": "ai-infra-learning",
+  "private": true,
+  "scripts": {
+    "style": "node scripts/build-style.mjs",
+    "dev": "npm run style && myst start",
+    "build": "npm run style && myst build --html --strict"
+  },
+  "devDependencies": {
+    "mystmd": "1.11.0"
+  }
+}
