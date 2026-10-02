@@ -14,14 +14,22 @@ title: 开始一次学习
 
 [CS336 × CMU 11-868 学习地图](ai-infra-map.md)继续提供课程材料和先修链；[来源页](ai-infra-sources.md)区分课程拆分、论文补充和工程补充。分类决定内容的主位置，路径决定本次学习的先后。
 
-## 当前路线：Ray Core 与 CPU／GPU
+## 先选定本次学习的主材料
 
-1. 从 [Task 与 ObjectRef](../topics/distributed-runtime/ray/cpu.ipynb)解释提交、执行和等待，预测两种 `get` 写法的执行区间。
-2. 在服务器按顺序运行 CPU Notebook 的任务单元，读取事件与数值结果；再进入[对象依赖](../topics/distributed-runtime/ray/cpu.ipynb)、[Actor 状态](../topics/distributed-runtime/ray/cpu.ipynb)和[并发](../topics/distributed-runtime/ray/cpu.ipynb)。
-3. 阅读 GPU Notebook，解释[逻辑资源与 GPU 编号](../topics/distributed-runtime/ray/gpu.ipynb)，预测两个 Actor 的设备映射，再逐单元运行单卡 Task 和双卡 Actor。
-4. 按两份 Notebook 的回收单元取回结果，比较预测与观察，把复述、修正和剩余问题补回 Notebook、结论摘要与 GAPS。
+新主题先寻找有明确作者或维护者的书籍、课程或教程，实际阅读拟使用的章节，再判断它是否有清楚的问题、连续案例和足够的解释。选定一份主要教材作为主线，API 文档用于核查细节。已有主材料时按当前问题继续阅读，不用每次重新收集一份书单。
 
-服务器双卡 RTX6000 Pro、96 核 CPU 来自用户自述。实验代码已准备，CPU/GPU 实验未运行；默认使用 4 个逻辑 CPU，实际环境由记录确认。
+核查改编许可后，在 Notebook 中完整展开选定范围的中文讲解、带注释代码和适量练习，保留原文入口、章节对应及版本。补充的解释与实验明确署为本仓库补充；有错误或过时之处，依据一手资料修正。材料不能只剩概念摘要，也不要求每一小段都插入提问。
+
+## 当前路线：Ray CPU 入门
+
+主材料是 [《Learning Ray》公开版第 2 章](https://maxpumperla.com/learning_ray/ch_02_ray_core/)的 A Ray Core Intro，作者为 Max Pumperla、Edward Oakes、Richard Liaw。作者公开 Notebook 采用 MIT 许可，本地改编入口与来源细节见 [Ray 主题页](../topics/distributed-runtime/ray/README.md)。
+
+1. 从 [CPU Notebook](../topics/distributed-runtime/ray/cpu.ipynb)的普通 Python 读取程序开始，理解输入输出及逐项等待的原因。
+2. 沿同一案例分别学习定义远程函数、提交任务、取得 ObjectRef 与取回结果，再比较两种等待位置。
+3. 让多个任务复用数据，把读取结果接到后续处理；最后从普通类过渡到保留计数的 Actor。
+4. 完成各阶段的小练习，再看末尾参考解答。在服务器执行示范，保存真实输出、自己的解释和剩余问题。
+
+入门使用 4 份逻辑 CPU，不需要 GPU。Notebook 末尾保留可选的背压、线程与协程实验，尚未按新标准展开；[GPU Notebook](../topics/distributed-runtime/ray/gpu.ipynb)作为后续阅读。双卡 RTX6000 Pro、96 核 CPU 来自用户自述，实际设备由运行记录确认；未运行部分不写成已验证。
 
 ## 性能模型示例路线
 
@@ -38,8 +46,9 @@ title: 开始一次学习
 
 > 我想解释：[一个具体问题]。请先阅读 AGENTS.md、相关主题和 GAPS。
 > 如果对应学习地图，请先打开该 section 的问题与先修节点，按需要阅读材料。
-> 先列出最小的先修关系，标出可能需要诊断的前提，再用 1–3 个问题了解我的当前理解。
-> 每次只讲一个概念单元，讲清机制和假设。设计一个我能在当前服务器上运行的小实验，先让我预测结果。
+> 先找到并阅读适合这个问题的主材料，说明选材理由和具体章节；已有主材料时继续使用。核查许可，保留来源与版本。
+> 沿教材的问题与案例充分展开中文解释，说明为什么引入下一步。必要先修在使用处补足，不要压缩成定义列表。
+> 给新 API、参数和关键步骤添加注释；完整示范之后按需要安排小练习与独立参考解答。只有当前提不清楚时再诊断，不强制逐段问答。
 > 结合我的复述、真实代码和一手资料找遗漏；区分待诊断缺口和已经发现的误解。
 
 如果需要知识地图，先让 LLM 说明每个节点**为什么与目标有关**、依赖什么、需要理解到什么深度，再挑一个节点开始。不要一次生成全部笔记。
@@ -49,6 +58,7 @@ title: 开始一次学习
 | 成果 | 去哪里 |
 | --- | --- |
 | 当前解释、关键假设、修正理由 | 对应教学 Notebook；README 保存精选结论摘要 |
+| 主材料、阅读范围、改编许可与修正 | 主题 README 和 Notebook 来源说明 |
 | 输入、计时方法、运行记录与结果 | Notebook 和 `results/` |
 | 教学中的核心实现 | 对应 Notebook 的代码单元；独立工程代码随项目维护 |
 | 无法解释的现象、候选先修主题 | GAPS |

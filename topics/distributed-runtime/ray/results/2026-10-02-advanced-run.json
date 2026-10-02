@@ -1,0 +1,512 @@
+{
+  "kind": "Ray cpu Notebook learning experiment",
+  "notebook": "/home/ubuntu/ai-infra-learning/.runs/ray-cpu-adaptation-20261002/topics/distributed-runtime/ray/cpu.ipynb",
+  "status": "finished",
+  "started_at_utc": "2026-10-02T12:22:52.308407+00:00",
+  "parameters": {
+    "num_cpus": 4,
+    "timeout_seconds": 120,
+    "task_count": 8,
+    "teaching_delay_seconds": 0.15
+  },
+  "environment": {
+    "hostname": "rtx6000pro-4",
+    "platform": "Linux-6.12.111+deb13-cloud-amd64-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "python_executable": "/home/ubuntu/ai-infra-learning/.venv-ray/bin/python",
+    "ray": "2.59.0",
+    "host_cpu_count": 96,
+    "cpu_affinity_count": 96,
+    "git_revision": "42555ce0db829b316d42d39ea27ed96e37291279",
+    "git_status": [
+      " M topics/distributed-runtime/ray/cpu.ipynb",
+      "?? topics/distributed-runtime/ray/LICENSE.learning-ray.txt"
+    ],
+    "ray_resources": {
+      "node:10.128.0.2": 1.0,
+      "memory": 368921739264.0,
+      "node:__internal_head__": 1.0,
+      "object_store_memory": 134217728.0,
+      "CPU": 4.0
+    }
+  },
+  "clock": "time.perf_counter_ns; event times comparable on this single node",
+  "steps": [
+    {
+      "name": "runtime_start",
+      "status": "passed",
+      "started_ns": 29617868518732,
+      "resources": {
+        "node:10.128.0.2": 1.0,
+        "memory": 368921739264.0,
+        "node:__internal_head__": 1.0,
+        "object_store_memory": 134217728.0,
+        "CPU": 4.0
+      },
+      "finished_ns": 29620772692311
+    },
+    {
+      "name": "bounded_pending_work",
+      "status": "passed",
+      "started_ns": 29620987823017,
+      "pending_limit": 3,
+      "pending_counts": [
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "results": [
+        {
+          "input": 0,
+          "value": 0,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29620993872397,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621143950787,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            }
+          ]
+        },
+        {
+          "input": 2,
+          "value": 4,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29620994591426,
+              "hostname": "rtx6000pro-4",
+              "pid": 183123,
+              "thread_id": 140665220474752
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621144665637,
+              "hostname": "rtx6000pro-4",
+              "pid": 183123,
+              "thread_id": 140665220474752
+            }
+          ]
+        },
+        {
+          "input": 1,
+          "value": 1,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29620994591546,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621144662637,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            }
+          ]
+        },
+        {
+          "input": 3,
+          "value": 9,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29621145348636,
+              "hostname": "rtx6000pro-4",
+              "pid": 183123,
+              "thread_id": 140665220474752
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621295424177,
+              "hostname": "rtx6000pro-4",
+              "pid": 183123,
+              "thread_id": 140665220474752
+            }
+          ]
+        },
+        {
+          "input": 4,
+          "value": 16,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29621145834476,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621295901556,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            }
+          ]
+        },
+        {
+          "input": 5,
+          "value": 25,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29621146383446,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621296458116,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            }
+          ]
+        },
+        {
+          "input": 6,
+          "value": 36,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29621296626536,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621446697836,
+              "hostname": "rtx6000pro-4",
+              "pid": 183120,
+              "thread_id": 140231266105216
+            }
+          ]
+        },
+        {
+          "input": 7,
+          "value": 49,
+          "events": [
+            {
+              "label": "task_start",
+              "at_ns": 29621297011876,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            },
+            {
+              "label": "task_end",
+              "at_ns": 29621447089766,
+              "hostname": "rtx6000pro-4",
+              "pid": 183121,
+              "thread_id": 139722416416640
+            }
+          ]
+        }
+      ],
+      "finished_ns": 29621448170476
+    },
+    {
+      "name": "serial_actor",
+      "status": "passed",
+      "started_ns": 29621453402896,
+      "results": [
+        {
+          "input": 0,
+          "completed": 1,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29621466402366,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29621616486716,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            }
+          ]
+        },
+        {
+          "input": 1,
+          "completed": 2,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29621616733296,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29621766804626,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            }
+          ]
+        },
+        {
+          "input": 2,
+          "completed": 3,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29621767013356,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29621917092386,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            }
+          ]
+        },
+        {
+          "input": 3,
+          "completed": 4,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29621917240156,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29622067321736,
+              "hostname": "rtx6000pro-4",
+              "pid": 183122,
+              "thread_id": 140238154246016
+            }
+          ]
+        }
+      ],
+      "finished_ns": 29622069355386
+    },
+    {
+      "name": "threaded_actor",
+      "status": "passed",
+      "started_ns": 29622073617156,
+      "results": [
+        {
+          "input": 0,
+          "completed": 1,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29622816988197,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871154849472
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29622967071357,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871154849472
+            }
+          ]
+        },
+        {
+          "input": 1,
+          "completed": 4,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29622967510777,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871163242176
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29623117581467,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871163242176
+            }
+          ]
+        },
+        {
+          "input": 2,
+          "completed": 2,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29622817112047,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871163242176
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29622967197237,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871163242176
+            }
+          ]
+        },
+        {
+          "input": 3,
+          "completed": 3,
+          "events": [
+            {
+              "label": "actor_call_start",
+              "at_ns": 29622967401527,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871154849472
+            },
+            {
+              "label": "actor_call_end",
+              "at_ns": 29623117482987,
+              "hostname": "rtx6000pro-4",
+              "pid": 183424,
+              "thread_id": 139871154849472
+            }
+          ]
+        }
+      ],
+      "finished_ns": 29623118921537
+    },
+    {
+      "name": "async_actor",
+      "status": "passed",
+      "started_ns": 29623123527556,
+      "results": [
+        {
+          "input": 0,
+          "completed": 4,
+          "events": [
+            {
+              "label": "async_call_start",
+              "at_ns": 29624016420578,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            },
+            {
+              "label": "async_call_end",
+              "at_ns": 29624167246878,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            }
+          ]
+        },
+        {
+          "input": 1,
+          "completed": 1,
+          "events": [
+            {
+              "label": "async_call_start",
+              "at_ns": 29623865073658,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            },
+            {
+              "label": "async_call_end",
+              "at_ns": 29624015935598,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            }
+          ]
+        },
+        {
+          "input": 2,
+          "completed": 2,
+          "events": [
+            {
+              "label": "async_call_start",
+              "at_ns": 29623865103888,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            },
+            {
+              "label": "async_call_end",
+              "at_ns": 29624015960638,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            }
+          ]
+        },
+        {
+          "input": 3,
+          "completed": 3,
+          "events": [
+            {
+              "label": "async_call_start",
+              "at_ns": 29624016373698,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            },
+            {
+              "label": "async_call_end",
+              "at_ns": 29624167227298,
+              "hostname": "rtx6000pro-4",
+              "pid": 183482,
+              "thread_id": 140271359325888
+            }
+          ]
+        }
+      ],
+      "finished_ns": 29624168691038
+    },
+    {
+      "name": "actor_timeline",
+      "status": "passed",
+      "started_ns": 29624171724478,
+      "finished_ns": 29624638456637
+    },
+    {
+      "name": "logical_resources",
+      "status": "passed",
+      "started_ns": 29624642478207,
+      "resources": {
+        "node:10.128.0.2": 1.0,
+        "memory": 368921739264.0,
+        "node:__internal_head__": 1.0,
+        "object_store_memory": 134217728.0,
+        "CPU": 4.0
+      },
+      "finished_ns": 29624643364267
+    }
+  ],
+  "finished_at_utc": "2026-10-02T12:23:00.451751+00:00"
+}

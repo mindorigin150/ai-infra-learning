@@ -7,12 +7,12 @@ description: 一个随实际问题生长的 AI 系统学习工作台。
 
 从一个问题出发，建立解释，做一个实验，再用结果修正理解。
 
-这个仓库以 **Jupyter Notebook 中交替展开的讲解、预测、代码和观察** 保存学习材料。Markdown 维护分类导航、学习路线与结论摘要；需要独立运行的工程实现再提取为脚本。
+先选取并阅读有明确作者的教材，再将相关范围改编为完整的中文 Jupyter Notebook，沿着具体问题展开讲解、代码与适量练习。Markdown 维护分类导航、学习路线与结论摘要；需要独立运行的工程实现再提取为脚本。
 
 | 从这里开始 | 用途 |
 | --- | --- |
 | [按 topic 学习](topics/README.md) | 10 个系统机制分类，连接具体问题、主笔记与材料 |
-| [Ray Core · CPU](topics/distributed-runtime/ray/cpu.ipynb) | Task、ObjectRef、Actor、并发：讲解与代码交替 |
+| [Ray Core · CPU](topics/distributed-runtime/ray/cpu.ipynb) | 《Learning Ray》公开版第 2 章入门改编：从读取记录到 Task、ObjectRef 与 Actor |
 | [Ray GPU](topics/distributed-runtime/ray/gpu.ipynb) | 单卡 Task、双卡 Actor 与设备映射：讲解与代码交替 |
 | [开始一次学习](paths/start-here.md) | 与 LLM 小步学习、诊断理解、安排实验 |
 | [性能模型教学 Notebook](topics/foundations/performance-model/lab.ipynb) | Roofline 讲解、参数计算与 NumPy 计时；另保留历史 CPU 输出 |
@@ -47,7 +47,7 @@ GAPS.md      问题与待诊断区域
 AGENTS.md    LLM 在这个仓库工作的约定
 ```
 
-同一主题的新发现补回它的 Notebook，Git 保存历史。[分类页](topics/README.md)按系统机制维护具体 topic 的入口；新主题从根目录的 `templates/lab.ipynb` 编写教学内容，`README.md` 从 [主题入口模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新分类页、主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
+同一主题的新发现补回它的 Notebook，Git 保存历史。[分类页](topics/README.md)按系统机制维护具体 topic 的入口；新主题先选择并实际阅读主材料、核查改编许可，再从根目录的 `templates/lab.ipynb` 编写中文教学内容，`README.md` 从 [主题入口模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新分类页、主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
 
 主题图片放在主题自己的 `assets/`；多个主题共用的素材再放根目录 `assets/`。Notebook 留下精选输出；可重复运行的实现提取到 `.py`、`.cu` 或 `.cpp`，并注明运行环境。
 

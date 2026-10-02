@@ -1,0 +1,57 @@
+{
+  "environment": {
+    "started_at_utc": "2026-10-02T12:22:29.961653+00:00",
+    "python": "3.13.5",
+    "ray": "2.59.0",
+    "platform": "Linux-6.12.111+deb13-cloud-amd64-x86_64-with-glibc2.41",
+    "host_cpu_count": 96,
+    "git_revision": "42555ce0db829b316d42d39ea27ed96e37291279",
+    "git_status": [
+      " M topics/distributed-runtime/ray/cpu.ipynb",
+      "?? topics/distributed-runtime/ray/LICENSE.learning-ray.txt"
+    ],
+    "logical_resources": {
+      "node:10.128.0.2": 1.0,
+      "memory": 258326416589.0,
+      "node:__internal_head__": 1.0,
+      "object_store_memory": 110711321395.0,
+      "CPU": 4.0
+    }
+  },
+  "parameters": {
+    "num_cpus": 4,
+    "database": [
+      "Learning",
+      "Ray",
+      "Flexible",
+      "Distributed",
+      "Python",
+      "for",
+      "Machine",
+      "Learning"
+    ],
+    "delay_rule": "item / 10 seconds",
+    "timeout_seconds": 120,
+    "warmup_batches": 1,
+    "timing_repeats": 3
+  },
+  "timing_method": "time.perf_counter; submission through ray.get; fixed order get_each then get_all",
+  "timings": [
+    {
+      "repeat": 1,
+      "get_each_seconds": 2.8110847049974836,
+      "get_all_seconds": 1.0034140450006817
+    },
+    {
+      "repeat": 2,
+      "get_each_seconds": 2.8121474150029826,
+      "get_all_seconds": 1.0033593440020923
+    },
+    {
+      "repeat": 3,
+      "get_each_seconds": 2.811246426001162,
+      "get_all_seconds": 1.0025820640003076
+    }
+  ],
+  "finished_at_utc": "2026-10-02T12:22:52.299487+00:00"
+}

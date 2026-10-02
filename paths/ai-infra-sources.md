@@ -25,11 +25,15 @@ description: CS336、CMU 11-868 的逐课覆盖，以及多模态与 diffusion �
 (source-ray)=
 ### Ray Core
 
-**类型**：工程文档 · **版本定位**：Ray 2.59.0，查阅 2026-10-02 · [官方概念](https://docs.ray.io/en/latest/ray-core/key-concepts.html) · [资源模型](https://docs.ray.io/en/latest/ray-core/scheduling/resources.html)
+**主要教材**：[《Learning Ray》公开版第 2 章](https://maxpumperla.com/learning_ray/ch_02_ray_core/)，Max Pumperla、Edward Oakes、Richard Liaw。已阅读其中 A Ray Core Intro 的正文与代码，采用其连续的数据读取案例，完整改编入门范围；具体取舍、许可和对应关系见 [Ray 主题页](../topics/distributed-runtime/ray/README.md)。系统内部和 MapReduce 暂不展开。
 
-**主笔记**：[Ray：Task、ObjectRef、Actor 与 CPU/GPU 资源](../topics/distributed-runtime/ray/cpu.ipynb)。**关联材料**：[14.7 ReaLHF / verl](ai-infra/14-post-training-rlhf.md#ai-14-7)。这是独立工程补充；CPU/GPU 实验未运行。
+**来源版本**：[公开 Notebook](https://github.com/maxpumperla/learning_ray/blob/321ebe5fdab451f75f2736683fd40921feffdf27/notebooks/ch_02_ray_core.ipynb)，提交 `321ebe5fdab451f75f2736683fd40921feffdf27`，MIT 许可；原示例基于 Ray 2.2.0，本地代码面向 Ray 2.59.0，查阅日期 2026-10-02。
 
-用户提供的[视频](https://www.bilibili.com/video/BV1HuZcBEEyy/)标题与简介已核查，聚焦 Task、Actor、调度与并发。正文、字幕和简介里的私有代码未读取；主笔记依据官方资料，不写成视频逐段总结。
+**辅助对照**：[官方 Gentle Introduction](https://docs.ray.io/en/latest/ray-core/examples/gentle_walkthrough.html)。**技术核查**：[Tasks](https://docs.ray.io/en/latest/ray-core/tasks.html)、[Objects](https://docs.ray.io/en/latest/ray-core/objects.html)、[Actors](https://docs.ray.io/en/latest/ray-core/actors.html)、[Actor 执行顺序](https://docs.ray.io/en/latest/ray-core/actors/task-orders.html)、[资源模型](https://docs.ray.io/en/latest/ray-core/scheduling/resources.html)。本地补充解释、注释和练习，修正原文的 GIL 归因、超时语义及计数更新等待关系，不复制历史运行数字。
+
+**主笔记**：[Ray CPU 中文入门与实验](../topics/distributed-runtime/ray/cpu.ipynb)。**关联材料**：[14.7 ReaLHF / verl](ai-infra/14-post-training-rlhf.md#ai-14-7)。这是独立工程补充；运行状态见主题入口。
+
+用户提供的[视频](https://www.bilibili.com/video/BV1HuZcBEEyy/)标题与简介已核查，聚焦 Task、Actor、调度与并发。正文、字幕和简介里的私有代码未读取，不作为本次改编来源。
 
 ## CS336 Spring 2025：逐课对照
 

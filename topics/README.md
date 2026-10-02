@@ -25,7 +25,7 @@ title: 主题索引
 
 | 主题 | 主位置 | 内容状态 |
 | --- | --- | --- |
-| [Ray CPU](distributed-runtime/ray/cpu.ipynb) · [Ray GPU](distributed-runtime/ray/gpu.ipynb) | 分布式运行时与资源编排 | 讲解、预测、代码与观察交替组织；未运行 |
+| [Ray CPU](distributed-runtime/ray/cpu.ipynb) · [Ray GPU](distributed-runtime/ray/gpu.ipynb) | 分布式运行时与资源编排 | CPU 为《Learning Ray》公开章节的中文改编；GPU 保留原实验，运行状态见主题入口 |
 | [性能模型教学 Notebook](foundations/performance-model/lab.ipynb) | 性能模型与观测 | 重写后的代码未运行；原真实 CPU 输出另存历史 Notebook |
 
 这些状态描述内容与证据，不评价学习者掌握度。
@@ -41,10 +41,10 @@ title: 主题索引
 ```text
 topics/<机制分类>/<主题>/
     README.md        Notebook 入口、来源定位与精选结论摘要
-    lab.ipynb        讲解、预测、代码、观察与复述交替组织
+    lab.ipynb        依据主教材展开的中文讲解、注释代码与练习
     requirements.txt 主题实验依赖
     assets/          主题插图及绘图源码
     results/         精选小结果及环境记录
 ```
 
-分类页维护具体 topic 的 Notebook 与材料入口。教学内容从 `templates/lab.ipynb` 开始，README 从 `templates/topic.md` 开始，保留学习者自己的解释并区分来源、推断与实测。使用相对链接，新增公开 Notebook 时更新相关路径和 `myst.yml`；已有主题入口路径保持稳定。
+分类页维护具体 topic 的 Notebook 与材料入口。先选定并阅读主材料、核查改编许可，再从 `templates/lab.ipynb` 展开教学内容，README 从 `templates/topic.md` 开始，保留学习者自己的解释并区分来源、推断与实测。使用相对链接，新增公开 Notebook 时更新相关路径和 `myst.yml`；已有主题入口路径保持稳定。

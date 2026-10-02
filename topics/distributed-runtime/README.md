@@ -14,7 +14,7 @@ Ray 的 Actor 表示有状态进程；RL 的 actor 通常指 policy 角色。张
 
 ## 已有教学 Notebook
 
-[Ray Core · CPU](ray/cpu.ipynb) · [Ray GPU](ray/gpu.ipynb)：讲解、预测、代码和观察交替组织；实验未运行。
+[Ray Core · CPU](ray/cpu.ipynb) · [Ray GPU](ray/gpu.ipynb)：CPU 入门改编自《Learning Ray》公开版第 2 章，进阶和 GPU 保留原实验；来源与运行状态见 [Ray 入口](ray/README.md)。
 
 ## Topic 与材料入口
 
@@ -22,11 +22,12 @@ Ray 的 Actor 表示有状态进程；RL 的 actor 通常指 policy 角色。张
 
 | Topic | 要解释的问题 | 材料入口 |
 | --- | --- | --- |
-| Ray Task 与 ObjectRef | 提交、执行、结果等待怎样分开？ | [Ray 1](ray/cpu.ipynb) |
-| Ray 对象依赖与背压 | 引用怎样连接工作，怎样限制在途任务？ | [Ray 2](ray/cpu.ipynb) |
-| Ray Actor | 持久进程怎样保留实例状态？ | [Ray 3](ray/cpu.ipynb) |
-| Ray Actor 并发 | 线程与协程在哪一层并发，状态怎样保护？ | [Ray 4](ray/cpu.ipynb) |
-| Ray CPU/GPU 资源 | 逻辑资源与设备可见性怎样对应实际执行？ | [Ray 5](ray/gpu.ipynb) |
+| Ray Task 与 ObjectRef | 从普通读取程序出发，怎样分开提交与等待？ | [CPU 入门](ray/cpu.ipynb#ray-cpu-tasks) |
+| Ray 数据与依赖 | 输入怎样复用，读取结果怎样交给后续处理？ | [数据流](ray/cpu.ipynb#ray-cpu-data) |
+| Ray 背压 | 怎样限制在途任务？ | [可选进阶](ray/cpu.ipynb#ray-cpu-advanced) |
+| Ray Actor | 持久进程怎样保留实例状态？ | [Actor 入门](ray/cpu.ipynb#ray-cpu-actors) |
+| Ray Actor 并发 | 线程与协程在哪一层并发，状态怎样保护？ | [可选进阶](ray/cpu.ipynb#ray-cpu-advanced) |
+| Ray CPU/GPU 资源 | 逻辑资源与设备可见性怎样对应实际执行？ | [GPU 实验](ray/gpu.ipynb) |
 | Rollout Engine 与权重同步 | 训练更新后的 policy 怎样传到生成侧，每条轨迹怎样对应策略版本？ | [14.6](../../paths/ai-infra/14-post-training-rlhf.md#ai-14-6) |
 | ReaLHF / verl | 角色部署、资源重分配与执行流水线怎样组合训练和生成？ | [14.7](../../paths/ai-infra/14-post-training-rlhf.md#ai-14-7) |
 | 同步/异步 Rollout 与策略版本 | 增加并发或异步程度怎样改变数据新鲜度、资源竞争和学习结果？ | [14.8](../../paths/ai-infra/14-post-training-rlhf.md#ai-14-8) |
