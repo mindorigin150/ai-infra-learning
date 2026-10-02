@@ -1,3 +1,8 @@
+// MyST publishes widget modules under build/ and the shared static folder at styles/.
+const stylesheet = await fetch(new URL('../styles/site.css', import.meta.url));
+if (!stylesheet.ok) throw new Error(`Shared widget styles failed to load: ${stylesheet.status}`);
+const sharedCSS = await stylesheet.text();
+
 function render({ model, el }) {
   el.innerHTML = `<section class="infra-widget">
     <h3>Explore the Roofline model</h3>
@@ -5,8 +10,11 @@ function render({ model, el }) {
     <div class="controls"></div>
     <div class="summary" aria-live="polite"></div>
     <svg viewBox="0 0 700 380" role="img" aria-label="Roofline upper bound versus arithmetic intensity"></svg>
-    <div class="legend"><span class="compute">Compute ceiling</span><span class="memory">Bandwidth ceiling</span><span>Combined bound</span></div>
+    <div class="legend"><span class="compute">Compute ceiling</span><span class="memory">Bandwidth ceiling</span><span>Combined bound</span><span class="selected">Selected intensity</span></div>
   </section>`;
+  const style = document.createElement('style');
+  style.textContent = sharedCSS;
+  el.prepend(style);
   const controls = el.querySelector('.controls');
   const chart = el.querySelector('svg');
   const summary = el.querySelector('.summary');

@@ -4,6 +4,8 @@ project:
   title: AI Infra Learning
   description: 用笔记、实验和可视化建立 AI 系统的执行模型。
   github: https://github.com/mindorigin150/ai-infra-learning
+  static_files:
+    - assets/styles
   toc:
     - file: README.md
     - title: 学习与导航
@@ -27,5 +29,6 @@ project:
 site:
   template: book-theme
   options:
+    logo_text: AI Infra Learning
     folders: true
     style: assets/styles/site.css

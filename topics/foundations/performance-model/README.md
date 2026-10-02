@@ -40,7 +40,6 @@ $$
 预测：固定带宽和计算峰值，将算术强度提高十倍，什么时候上界会提高十倍？什么时候会停止增长？
 
 ```{anywidget} ./assets/roofline.mjs
-:css: ../../../assets/styles/site.css
 {
   "intensity": 1,
   "bandwidth": 100,

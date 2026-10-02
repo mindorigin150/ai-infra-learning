@@ -16,17 +16,18 @@
   --infra-font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
   --infra-font-code: ui-monospace, 'Cascadia Code', 'SFMono-Regular', Consolas, 'DejaVu Sans Mono', monospace;
 }
-body { background: var(--infra-background); font-family: var(--infra-font-body); }
+html.light { --myst-color-bg: var(--infra-background); --myst-color-bg-secondary: var(--infra-surface); }
+body.bg-myst-bg { background: var(--infra-background); font-family: var(--infra-font-body); }
 main { background: var(--infra-background); }
-.prose { color: var(--infra-text); font-family: var(--infra-font-body); font-size: 18px; line-height: 1.8; }
-.prose :is(h1, h2, h3, h4, strong) { color: var(--infra-text); }
-.prose a { color: var(--infra-communication); text-underline-offset: .2em; }
-.prose :is(code, pre) { font-family: var(--infra-font-code); }
-.prose blockquote { color: var(--infra-muted); border-left-color: var(--infra-communication); }
-.prose :is(th, td) { border-color: var(--infra-border); }
-.prose th { background: var(--infra-communication-fill); }
-.prose figure { margin: 1.8em 0; }
-.prose figcaption { color: var(--infra-muted); font-size: .88em; }
+.article.content { color: var(--infra-text); font-family: var(--infra-font-body); font-size: 18px; line-height: 1.8; }
+.article.content :is(h1, h2, h3, h4, strong) { color: var(--infra-text); }
+.article.content a { color: var(--infra-communication); text-underline-offset: .2em; }
+.article.content :is(code, pre) { font-family: var(--infra-font-code); }
+.article.content blockquote { color: var(--infra-muted); border-left-color: var(--infra-communication); }
+.article.content :is(th, td) { border-color: var(--infra-border); }
+.article.content th { background: var(--infra-communication-fill); }
+.article.content figure { margin: 1.8em 0; }
+.article.content figcaption { color: var(--infra-muted); font-size: .88em; }
 
 .infra-widget { background: var(--infra-surface); color: var(--infra-text); font-family: var(--infra-font-body); border: 1px solid var(--infra-border); border-radius: 14px; padding: 20px; }
 .infra-widget * { box-sizing: border-box; }
@@ -50,4 +51,10 @@ main { background: var(--infra-background); }
 .infra-widget .legend span::before { content: ''; display: inline-block; width: 16px; height: 3px; margin: 0 6px 3px 0; background: var(--infra-communication); }
 .infra-widget .legend .compute::before { background: var(--infra-compute); }
 .infra-widget .legend .memory::before { background: var(--infra-memory); }
-@media (max-width: 560px) { .infra-widget { padding: 14px; } .infra-widget .controls { grid-template-columns: 1fr; gap: 14px; } }
+.infra-widget .legend .selected::before { background: var(--infra-warning); width: 7px; height: 7px; border-radius: 50%; }
+@media (max-width: 560px) {
+  .article.content h2 { font-size: 1.35em; padding-inline-end: 1em; }
+  .infra-widget { padding: 14px; }
+  .infra-widget .controls { grid-template-columns: 1fr; gap: 14px; }
+  .infra-widget svg text { font-size: 20px; }
+}
