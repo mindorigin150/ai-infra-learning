@@ -61,7 +61,7 @@ title: '14 · SFT、DPO、PPO、GRPO 与 RLHF 系统'
 (ai-14-7)=
 ## 14.7 ReaLHF / verl：角色部署、资源重分配与执行流水线怎样组合训练和生成？
 
-- **先修节点**：[14.6 Rollout Engine 与权重同步](14-post-training-rlhf.md#ai-14-6)、[07.11 DP×TP×PP 组合与 Rank Placement](07-nccl-model-parallelism.md#ai-07-11)、[08.6 FSDP / FSDP2](08-zero-fsdp-memory.md#ai-08-6)；追踪 Ray 编排时先回顾 [Ray Actor 与资源模型](../../topics/distributed-runtime/ray/README.md#ray-actors)。
+- **先修节点**：[14.6 Rollout Engine 与权重同步](14-post-training-rlhf.md#ai-14-6)、[07.11 DP×TP×PP 组合与 Rank Placement](07-nccl-model-parallelism.md#ai-07-11)、[08.6 FSDP / FSDP2](08-zero-fsdp-memory.md#ai-08-6)；追踪 Ray 编排时先回顾 [Ray Actor 与资源模型](../../topics/distributed-runtime/ray/cpu.ipynb)。
 - **课程出处**：**课程拆分与工程补充**；[MREAL · Efficient Reinforcement Learning System for LLMs](../ai-infra-sources.md#course-mreal)。
 - **论文与实现**：[ReaL / ReaLHF](../ai-infra-sources.md#source-realhf)、[HybridFlow / verl](../ai-infra-sources.md#source-hybridflow)、[verl documentation](../ai-infra-sources.md#source-verl)。
 - **后续验证（未运行）**：论文/代码比较：分别画控制流、数据流与角色资源；不强配所有算法同样的角色。

@@ -23,10 +23,13 @@ project:
           children:
             - file: topics/foundations/performance-model/README.md
             - file: topics/foundations/performance-model/lab.ipynb
+            - file: topics/foundations/performance-model/recorded-cpu.ipynb
         - file: topics/distributed-training/README.md
         - file: topics/distributed-runtime/README.md
           children:
             - file: topics/distributed-runtime/ray/README.md
+            - file: topics/distributed-runtime/ray/cpu.ipynb
+            - file: topics/distributed-runtime/ray/gpu.ipynb
         - file: topics/model-efficiency/README.md
         - file: topics/training-evaluation/README.md
         - file: topics/inference-serving/README.md

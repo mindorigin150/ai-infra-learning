@@ -1,1 +1,4 @@
 ray==2.59.0
+matplotlib>=3.9,<4
+jupyterlab>=4.4,<5
+ipykernel>=6.29,<8

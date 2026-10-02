@@ -27,7 +27,7 @@ description: CS336、CMU 11-868 的逐课覆盖，以及多模态与 diffusion �
 
 **类型**：工程文档 · **版本定位**：Ray 2.59.0，查阅 2026-10-02 · [官方概念](https://docs.ray.io/en/latest/ray-core/key-concepts.html) · [资源模型](https://docs.ray.io/en/latest/ray-core/scheduling/resources.html)
 
-**主笔记**：[Ray：Task、ObjectRef、Actor 与 CPU/GPU 资源](../topics/distributed-runtime/ray/README.md)。**关联材料**：[14.7 ReaLHF / verl](ai-infra/14-post-training-rlhf.md#ai-14-7)。这是独立工程补充；CPU/GPU 实验未运行。
+**主笔记**：[Ray：Task、ObjectRef、Actor 与 CPU/GPU 资源](../topics/distributed-runtime/ray/cpu.ipynb)。**关联材料**：[14.7 ReaLHF / verl](ai-infra/14-post-training-rlhf.md#ai-14-7)。这是独立工程补充；CPU/GPU 实验未运行。
 
 用户提供的[视频](https://www.bilibili.com/video/BV1HuZcBEEyy/)标题与简介已核查，聚焦 Task、Actor、调度与并发。正文、字幕和简介里的私有代码未读取；主笔记依据官方资料，不写成视频逐段总结。
 

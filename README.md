@@ -7,14 +7,15 @@ description: 一个随实际问题生长的 AI 系统学习工作台。
 
 从一个问题出发，建立解释，做一个实验，再用结果修正理解。
 
-这个仓库保存三类成果：**Markdown 中的知识模型、Notebook 中的实验证据、脚本中的可运行实现**。学习路线单独维护，主题内容持续更新。
+这个仓库以 **Jupyter Notebook 中交替展开的讲解、预测、代码和观察** 保存学习材料。Markdown 维护分类导航、学习路线与结论摘要；需要独立运行的工程实现再提取为脚本。
 
 | 从这里开始 | 用途 |
 | --- | --- |
 | [按 topic 学习](topics/README.md) | 10 个系统机制分类，连接具体问题、主笔记与材料 |
-| [Ray：CPU／GPU 入门](topics/distributed-runtime/ray/README.md) | Task、ObjectRef、Actor、并发与双 GPU 实验骨架 |
+| [Ray Core · CPU](topics/distributed-runtime/ray/cpu.ipynb) | Task、ObjectRef、Actor、并发：讲解与代码交替 |
+| [Ray GPU](topics/distributed-runtime/ray/gpu.ipynb) | 单卡 Task、双卡 Actor 与设备映射：讲解与代码交替 |
 | [开始一次学习](paths/start-here.md) | 与 LLM 小步学习、诊断理解、安排实验 |
-| [性能模型示例](topics/foundations/performance-model/README.md) | 概念图、交互式 Roofline 和实测实验 |
+| [性能模型教学 Notebook](topics/foundations/performance-model/lab.ipynb) | Roofline 讲解、参数计算与 NumPy 计时；另保留历史 CPU 输出 |
 | [学习地图：CS336 × CMU 11-868](paths/ai-infra-map.md) | 保留课程材料的 16 章、143 个具体技术节点及先修关系 |
 | [课程、论文与工程来源](paths/ai-infra-sources.md) | 原课对照、材料入口与补充内容的来源 |
 | [问题清单](GAPS.md) | 记录认知边界和下一步问题 |
@@ -22,7 +23,7 @@ description: 一个随实际问题生长的 AI 系统学习工作台。
 
 ## 阅读与编辑
 
-发布完成后的固定入口是 [GitHub Pages 网站](https://mindorigin150.github.io/ai-infra-learning/)。日常阅读无需启动 WSL，算力服务器也可以离线。网站展示已经保存的实验输出；交互成本模型在浏览器中计算。
+发布完成后的固定入口是 [GitHub Pages 网站](https://mindorigin150.github.io/ai-infra-learning/)。日常阅读无需启动 WSL，算力服务器也可以离线。网站展示 Notebook 的讲解、代码和已保存输出；执行与修改参数在服务器 Jupyter kernel 中完成。
 
 编辑使用 VS Code。需要预览尚未发布的内容时，在仓库根目录执行：
 
@@ -37,7 +38,7 @@ npm run dev
 
 ```text
 paths/       学习顺序和目标，链接到 topics
-topics/      稳定知识主题：主笔记、实验、代码、主题素材
+topics/      稳定知识主题：教学 Notebook、结论摘要、主题素材
 projects/    跨主题的完整项目
 inbox/       尚未归类的材料
 templates/   创建笔记、实验和概念图的起点
@@ -46,7 +47,7 @@ GAPS.md      问题与待诊断区域
 AGENTS.md    LLM 在这个仓库工作的约定
 ```
 
-同一主题的新发现修改它的主笔记，Git 保存历史。[分类页](topics/README.md)按系统机制维护具体 topic 的入口；新主题创建 `topics/<机制分类>/<主题>/README.md`，从 [主题模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新分类页、主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
+同一主题的新发现补回它的 Notebook，Git 保存历史。[分类页](topics/README.md)按系统机制维护具体 topic 的入口；新主题从根目录的 `templates/lab.ipynb` 编写教学内容，`README.md` 从 [主题入口模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新分类页、主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
 
 主题图片放在主题自己的 `assets/`；多个主题共用的素材再放根目录 `assets/`。Notebook 留下精选输出；可重复运行的实现提取到 `.py`、`.cu` 或 `.cpp`，并注明运行环境。
 

@@ -12,13 +12,13 @@ title: 性能模型与观测
 
 这里集中性能量与测量方法；具体系统的缓存、并行与执行策略链接回各自主位置。
 
-## 已有主笔记
+## 已有教学 Notebook
 
-[计算与访存的性能模型](../foundations/performance-model/README.md)：教学示例，包含已记录的 CPU 实验；原有路径保持稳定。
+[性能模型教学 Notebook](../foundations/performance-model/lab.ipynb)：概念与代码交替；新增代码未运行。[历史 CPU 记录](../foundations/performance-model/recorded-cpu.ipynb)保留真实输出与原来源。
 
 ## Topic 与材料入口
 
-下表按机制归类已有材料节点。材料页保留具体问题、先修与来源；主笔记在实际学习后逐步展开。条目不表示个人掌握度。
+下表按机制归类已有材料节点。材料页保留具体问题、先修与来源；教学 Notebook 在实际学习后逐步展开。条目不表示个人掌握度。
 
 | Topic | 要解释的问题 | 材料入口 |
 | --- | --- | --- |

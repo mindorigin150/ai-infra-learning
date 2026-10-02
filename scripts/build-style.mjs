@@ -45,34 +45,8 @@ main { background: var(--infra-background); }
   .myst-primary-sidebar-nav { padding-inline-end: 1rem; }
 }
 
-.infra-widget { background: var(--infra-surface); color: var(--infra-text); font-family: var(--infra-font-body); border: 1px solid var(--infra-border); border-radius: 14px; padding: 20px; }
-.infra-widget * { box-sizing: border-box; }
-.infra-widget h3 { margin: 0 0 8px; font-size: 20px; }
-.infra-widget p { line-height: 1.6; }
-.infra-widget .model-note { margin: 0 0 20px; color: var(--infra-muted); font-size: 14px; }
-.infra-widget .controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.infra-widget label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
-.infra-widget input { width: 100%; accent-color: var(--infra-communication); }
-.infra-widget output { font-family: var(--infra-font-code); font-size: 13px; }
-.infra-widget .summary { padding: 12px 0 0; font-size: 15px; }
-.infra-widget svg { display: block; width: 100%; height: auto; margin-top: 12px; }
-.infra-widget svg text { fill: var(--infra-muted); font-size: 12px; font-family: var(--infra-font-body); }
-.infra-widget .grid-line { stroke: var(--infra-border); stroke-width: 1; stroke-dasharray: 3 5; }
-.infra-widget .axis { stroke: var(--infra-muted); stroke-width: 1; }
-.infra-widget .compute-line { stroke: var(--infra-compute); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
-.infra-widget .memory-line { stroke: var(--infra-memory); stroke-width: 2; fill: none; }
-.infra-widget .bound-line { stroke: var(--infra-communication); stroke-width: 3; fill: none; }
-.infra-widget .workload { fill: var(--infra-warning); stroke: var(--infra-surface); stroke-width: 2; }
-.infra-widget .legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
-.infra-widget .legend span::before { content: ''; display: inline-block; width: 16px; height: 3px; margin: 0 6px 3px 0; background: var(--infra-communication); }
-.infra-widget .legend .compute::before { background: var(--infra-compute); }
-.infra-widget .legend .memory::before { background: var(--infra-memory); }
-.infra-widget .legend .selected::before { background: var(--infra-warning); width: 7px; height: 7px; border-radius: 50%; }
 @media (max-width: 560px) {
   .article.content h2 { font-size: 1.35em; padding-inline-end: 1em; }
-  .infra-widget { padding: 14px; }
-  .infra-widget .controls { grid-template-columns: 1fr; gap: 14px; }
-  .infra-widget svg text { font-size: 20px; }
 }
 `;
 writeFileSync(new URL('assets/styles/site.css', root), css);

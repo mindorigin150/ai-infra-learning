@@ -4,7 +4,7 @@ title: 主题索引
 
 # 主题索引
 
-按**系统机制**寻找具体 topic：先确定希望解释的行为，再进入主笔记或材料节点。分类不是学习顺序；先修关系与目标路线放在 `paths/`。
+按**系统机制**寻找具体 topic：先确定希望解释的行为，再进入教学 Notebook 或材料节点。分类不是学习顺序；先修关系与目标路线放在 `paths/`。
 
 ## 按 topic 进入
 
@@ -21,12 +21,12 @@ title: 主题索引
 | [训练目标与评估](training-evaluation/README.md) | 优化的目标是什么，预算与数据怎样影响学习，怎样验证模型质量？ |
 | [生成执行与推理服务](inference-serving/README.md) | 请求怎样进入生成循环，缓存、批处理与调度怎样组织模型执行？ |
 
-## 已有主笔记
+## 已有教学材料
 
 | 主题 | 主位置 | 内容状态 |
 | --- | --- | --- |
-| [Ray：Task、ObjectRef、Actor 与 CPU/GPU 资源](distributed-runtime/ray/README.md) | 分布式运行时与资源编排 | 讲解与 CPU/GPU 实验骨架；实验未运行 |
-| [计算与访存的性能模型](foundations/performance-model/README.md) | 性能模型与观测 | 教学示例，包含已记录的 CPU 实验 |
+| [Ray CPU](distributed-runtime/ray/cpu.ipynb) · [Ray GPU](distributed-runtime/ray/gpu.ipynb) | 分布式运行时与资源编排 | 讲解、预测、代码与观察交替组织；未运行 |
+| [性能模型教学 Notebook](foundations/performance-model/lab.ipynb) | 性能模型与观测 | 重写后的代码未运行；原真实 CPU 输出另存历史 Notebook |
 
 这些状态描述内容与证据，不评价学习者掌握度。
 
@@ -34,18 +34,17 @@ title: 主题索引
 
 每个材料节点有一个主要归属，跨领域关系通过链接连接。例如 MoE 结构在模型表示、Expert Parallelism 在分布式训练、Grouped GEMM 在 GPU 优化。Ray 的 GPU 资源分配连接模型执行，张量通信连接 NCCL，生成循环与 KV 调度连接 vLLM。
 
-分类页覆盖现有 143 个材料节点，并增加 Ray 主笔记入口。[课程学习地图](../paths/ai-infra-map.md)与[来源对照](../paths/ai-infra-sources.md)继续保留，便于查先修与出处。新的解释、修正和实测证据补回 topic 的 README。
+分类页覆盖现有 143 个材料节点，并增加 Ray 教学 Notebook 入口。[课程学习地图](../paths/ai-infra-map.md)与[来源对照](../paths/ai-infra-sources.md)继续保留，便于查先修与出处。新的解释、修正和实测证据补回 topic 的 Notebook；README 保存精选结论摘要。
 
 ## 新主题的最小结构
 
 ```text
 topics/<机制分类>/<主题>/
-    README.md        当前知识模型、来源与证据入口
-    experiment.py    需要可运行实现时再添加
+    README.md        Notebook 入口、来源定位与精选结论摘要
+    lab.ipynb        讲解、预测、代码、观察与复述交替组织
     requirements.txt 主题实验依赖
-    lab.ipynb        需要 Notebook 时再添加
     assets/          主题插图及绘图源码
     results/         精选小结果及环境记录
 ```
 
-分类页维护该机制下的 topic 入口。主笔记从根目录 `templates/` 的主题模板开始，区分来源结论、模型推断与实测观察，保留学习者自己的解释。使用相对链接，新增公开页面时更新相关路径和 `myst.yml`；已有主题 URL 保持稳定。
+分类页维护具体 topic 的 Notebook 与材料入口。教学内容从 `templates/lab.ipynb` 开始，README 从 `templates/topic.md` 开始，保留学习者自己的解释并区分来源、推断与实测。使用相对链接，新增公开 Notebook 时更新相关路径和 `myst.yml`；已有主题入口路径保持稳定。

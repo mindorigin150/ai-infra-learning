@@ -5,7 +5,7 @@ description: 16 章、143 个具体技术节点，连接课程、论文、实现
 
 # 学习地图：CS336 × CMU 11-868
 
-主要导航现为 [topic 分类](../topics/README.md)；本页保留课程材料节点与先修链。[Ray Core](../topics/distributed-runtime/ray/README.md)作为独立运行时主题接入，先修从 Task、ObjectRef 与 Actor 展开。
+主要导航现为 [topic 分类](../topics/README.md)；本页保留课程材料节点与先修链。[Ray Core](../topics/distributed-runtime/ray/cpu.ipynb)作为独立运行时主题接入，先修从 Task、ObjectRef 与 Actor 展开。
 
 **章用于分组，section 是实际学习节点。** 本地图按已确定的范围整理为 **16 章、143 个 section**：LLM 训练与推理，以及 MoE、多模态、diffusion。每个 section 用技术名与具体问题命名，点开后可以看到先修、课程出处、论文/实现和后续验证。
 

@@ -8,7 +8,7 @@ title: 开始一次学习
 
 ## 从具体技术节点开始
 
-打开 [topic 分类索引](../topics/README.md)，先按要解释的机制定位，再进入主笔记或具体材料节点。例如任务编排进入 [Ray](../topics/distributed-runtime/ray/README.md)，算子执行进入 [GPU 执行](../topics/gpu-execution/README.md)，生成请求进入 [推理服务](../topics/inference-serving/README.md)。
+打开 [topic 分类索引](../topics/README.md)，先按要解释的机制定位，再进入教学 Notebook 或具体材料节点。例如任务编排进入 [Ray](../topics/distributed-runtime/ray/cpu.ipynb)，算子执行进入 [GPU 执行](../topics/gpu-execution/README.md)，生成请求进入 [推理服务](../topics/inference-serving/README.md)。
 
 每个节点都有具体问题、先修链接、课程出处、论文/实现和未运行的验证方案。先定位它在系统中的作用，再挑一个问题进入机制；遇到先修缺口时沿链接回顾。目录不是掌握度记录，也不要求按编号先修完所有课。
 
@@ -16,17 +16,17 @@ title: 开始一次学习
 
 ## 当前路线：Ray Core 与 CPU／GPU
 
-1. 从 [Task 与 ObjectRef](../topics/distributed-runtime/ray/README.md#ray-tasks)解释提交、执行和等待，预测两种 `get` 写法的执行区间。
-2. 在服务器运行 CPU `tasks` 用例，读取事件与数值结果；再进入[对象依赖](../topics/distributed-runtime/ray/README.md#ray-objects)、[Actor 状态](../topics/distributed-runtime/ray/README.md#ray-actors)和[并发](../topics/distributed-runtime/ray/README.md#ray-concurrency)。
-3. 解释[逻辑资源与 GPU 编号](../topics/distributed-runtime/ray/README.md#ray-resources)，预测两个 Actor 的设备映射，再运行单卡 Task 和双卡 Actor。
-4. 按[实验说明](../topics/distributed-runtime/ray/README.md#ray-labs)取回结果，比较预测与观察，把复述、修正和剩余问题补回主笔记与 GAPS。
+1. 从 [Task 与 ObjectRef](../topics/distributed-runtime/ray/cpu.ipynb)解释提交、执行和等待，预测两种 `get` 写法的执行区间。
+2. 在服务器按顺序运行 CPU Notebook 的任务单元，读取事件与数值结果；再进入[对象依赖](../topics/distributed-runtime/ray/cpu.ipynb)、[Actor 状态](../topics/distributed-runtime/ray/cpu.ipynb)和[并发](../topics/distributed-runtime/ray/cpu.ipynb)。
+3. 阅读 GPU Notebook，解释[逻辑资源与 GPU 编号](../topics/distributed-runtime/ray/gpu.ipynb)，预测两个 Actor 的设备映射，再逐单元运行单卡 Task 和双卡 Actor。
+4. 按两份 Notebook 的回收单元取回结果，比较预测与观察，把复述、修正和剩余问题补回 Notebook、结论摘要与 GAPS。
 
 服务器双卡 RTX6000 Pro、96 核 CPU 来自用户自述。实验代码已准备，CPU/GPU 实验未运行；默认使用 4 个逻辑 CPU，实际环境由记录确认。
 
 ## 性能模型示例路线
 
-1. 打开 [性能模型示例](../topics/foundations/performance-model/README.md)，先尝试回答开头的诊断问题。
-2. 用交互图改变一个参数，预测变化，然后核对模型给出的结果。
+1. 打开 [性能模型教学 Notebook](../topics/foundations/performance-model/lab.ipynb)，先尝试回答开头的诊断问题。
+2. 改变 Notebook 的一个教学参数，预测变化，再运行代码重画模型。
 3. 在远程服务器完成 [向量加法实验](../topics/foundations/performance-model/lab.ipynb)，保存真实结果。
 4. 复述模型能解释什么、不能解释什么；把剩余问题记入 [GAPS](../GAPS.md)。
 
@@ -48,9 +48,9 @@ title: 开始一次学习
 
 | 成果 | 去哪里 |
 | --- | --- |
-| 当前解释、关键假设、修正理由 | 对应 topic 主笔记 |
+| 当前解释、关键假设、修正理由 | 对应教学 Notebook；README 保存精选结论摘要 |
 | 输入、计时方法、运行记录与结果 | Notebook 和 `results/` |
-| 可重复运行的实现 | 主题或项目中的脚本 |
+| 教学中的核心实现 | 对应 Notebook 的代码单元；独立工程代码随项目维护 |
 | 无法解释的现象、候选先修主题 | GAPS |
 | 下一步目标与顺序 | 相应 `paths/` 文件 |
 

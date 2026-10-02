@@ -63,12 +63,12 @@ plt.style.use(Path("assets/styles/plots.mplstyle"))
 
 Mermaid 从 `templates/diagram.md` 复制图块，保留角色 class，替换节点和连线。修改 tokens 后，已有内嵌图源码与导出图需要同步重画；生成脚本不会自动改写所有主题笔记。
 
-网站由 `myst.yml` 加载共享 CSS，并通过 `project.static_files` 发布样式目录。交互图的 Shadow DOM 内部需要挂载同一 CSS 文件；参照示例 `roofline.mjs`：从模块发布位置使用 `new URL('../styles/site.css', import.meta.url)` 读取样式，把内容放进 widget 内部的 `<style>`。这个路径在本地预览和仓库子路径部署中都适用。
+网站由 `myst.yml` 加载共享 CSS，并通过 `project.static_files` 发布样式目录。Notebook 的 matplotlib 单元加载共享 mplstyle，并从 tokens 读取语义配色；改变模型参数后用同一单元重画，保存 SVG 与 Notebook 内的 PNG 输出。
 
-交互图从页面继承颜色变量，让主题切换实时生效；在 Shadow DOM 中挂载布局样式时，保留这条继承关系。
+若后续确需浏览器交互，组件内部也加载共享 CSS，资源路径按模块发布位置解析，并继承页面颜色变量。教学参数和硬件参数必须明确区分。
 
 静态图优先 SVG，Notebook 保留 PNG 输出。当前 SVG 将字形转为路径，方便跨机器显示；可编辑的文字与数据保留在绘图源码中。
 
 ## 参照成品
 
-参照 [性能模型示例](topics/foundations/performance-model/README.md) 的概念图和交互图，以及 [实验页面](topics/foundations/performance-model/lab.ipynb) 的实测曲线。网站图表、课堂解释和导出素材使用相同约定。[MyST 样式说明](https://mystmd.org/guide/website-style)
+参照 [性能模型 Notebook](topics/foundations/performance-model/lab.ipynb)的 Mermaid 与模型绘图代码，以及[历史 CPU 记录](topics/foundations/performance-model/recorded-cpu.ipynb)的真实曲线。网站图表、课堂解释和导出素材使用相同约定。[MyST 样式说明](https://mystmd.org/guide/website-style)
