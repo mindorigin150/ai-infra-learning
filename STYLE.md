@@ -6,9 +6,13 @@ title: 视觉规范
 
 暖色笔记风：米白纸面、深灰正文、低饱和语义配色。笔记默认中文，图表标签默认英文。图要服务于一个具体解释，保存可以重画的源码。
 
+夜间模式使用暖炭灰背景、暖白文字和更明亮的语义色。页面、导航、表格和交互图随同一个主题开关切换。
+
 ## 颜色是语义
 
 唯一颜色值来源为 `assets/styles/tokens.json`。下表说明含义；实际绘图从配置读取，不手工另建一套色板。
+
+`colors` 定义白天与导出图表的色板；`dark_colors` 覆盖网站和交互图在夜间使用的颜色。
 
 | 角色 | 颜色 | 典型用途 |
 | --- | --- | --- |
@@ -60,6 +64,8 @@ plt.style.use(Path("assets/styles/plots.mplstyle"))
 Mermaid 从 `templates/diagram.md` 复制图块，保留角色 class，替换节点和连线。修改 tokens 后，已有内嵌图源码与导出图需要同步重画；生成脚本不会自动改写所有主题笔记。
 
 网站由 `myst.yml` 加载共享 CSS，并通过 `project.static_files` 发布样式目录。交互图的 Shadow DOM 内部需要挂载同一 CSS 文件；参照示例 `roofline.mjs`：从模块发布位置使用 `new URL('../styles/site.css', import.meta.url)` 读取样式，把内容放进 widget 内部的 `<style>`。这个路径在本地预览和仓库子路径部署中都适用。
+
+交互图从页面继承颜色变量，让主题切换实时生效；在 Shadow DOM 中挂载布局样式时，保留这条继承关系。
 
 静态图优先 SVG，Notebook 保留 PNG 输出。当前 SVG 将字形转为路径，方便跨机器显示；可编辑的文字与数据保留在绘图源码中。
 
