@@ -11,9 +11,12 @@ description: 一个随实际问题生长的 AI 系统学习工作台。
 
 | 从这里开始 | 用途 |
 | --- | --- |
+| [按 topic 学习](topics/README.md) | 10 个系统机制分类，连接具体问题、主笔记与材料 |
+| [Ray：CPU／GPU 入门](topics/distributed-runtime/ray/README.md) | Task、ObjectRef、Actor、并发与双 GPU 实验骨架 |
 | [开始一次学习](paths/start-here.md) | 与 LLM 小步学习、诊断理解、安排实验 |
-| [主题索引](topics/README.md) | 找到已有知识，新内容补回相应主题 |
 | [性能模型示例](topics/foundations/performance-model/README.md) | 概念图、交互式 Roofline 和实测实验 |
+| [学习地图：CS336 × CMU 11-868](paths/ai-infra-map.md) | 保留课程材料的 16 章、143 个具体技术节点及先修关系 |
+| [课程、论文与工程来源](paths/ai-infra-sources.md) | 原课对照、材料入口与补充内容的来源 |
 | [问题清单](GAPS.md) | 记录认知边界和下一步问题 |
 | [视觉规范](STYLE.md) | 后续图表与交互演示保持一致 |
 
@@ -43,7 +46,7 @@ GAPS.md      问题与待诊断区域
 AGENTS.md    LLM 在这个仓库工作的约定
 ```
 
-同一主题的新发现修改它的主笔记，Git 保存历史。新主题创建 `topics/<领域>/<主题>/README.md`，从 [主题模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
+同一主题的新发现修改它的主笔记，Git 保存历史。[分类页](topics/README.md)按系统机制维护具体 topic 的入口；新主题创建 `topics/<机制分类>/<主题>/README.md`，从 [主题模板](https://github.com/mindorigin150/ai-infra-learning/blob/main/templates/topic.md) 开始；随后更新分类页、主题索引、相关学习路线和 `myst.yml` 的目录。暂时无法归类的材料先放 `inbox/`。
 
 主题图片放在主题自己的 `assets/`；多个主题共用的素材再放根目录 `assets/`。Notebook 留下精选输出；可重复运行的实现提取到 `.py`、`.cu` 或 `.cpp`，并注明运行环境。
 

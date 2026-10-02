@@ -13,10 +13,43 @@ project:
         - file: paths/start-here.md
         - file: topics/README.md
         - file: GAPS.md
-    - title: 性能模型 · 示例
+    - title: 按 topic 学习
       children:
-        - file: topics/foundations/performance-model/README.md
-        - file: topics/foundations/performance-model/lab.ipynb
+        - file: topics/models/README.md
+        - file: topics/data-pipelines/README.md
+        - file: topics/tensor-autograd/README.md
+        - file: topics/gpu-execution/README.md
+        - file: topics/performance/README.md
+          children:
+            - file: topics/foundations/performance-model/README.md
+            - file: topics/foundations/performance-model/lab.ipynb
+        - file: topics/distributed-training/README.md
+        - file: topics/distributed-runtime/README.md
+          children:
+            - file: topics/distributed-runtime/ray/README.md
+        - file: topics/model-efficiency/README.md
+        - file: topics/training-evaluation/README.md
+        - file: topics/inference-serving/README.md
+    - title: 课程材料 · CS336 × CMU 11-868
+      children:
+        - file: paths/ai-infra-map.md
+        - file: paths/ai-infra-sources.md
+        - file: paths/ai-infra/01-tokenizer-transformer.md
+        - file: paths/ai-infra/02-pytorch-training-step.md
+        - file: paths/ai-infra/03-data-sequence-packing.md
+        - file: paths/ai-infra/04-gpu-profiling.md
+        - file: paths/ai-infra/05-cuda-triton-kernels.md
+        - file: paths/ai-infra/06-flashattention-compilation.md
+        - file: paths/ai-infra/07-nccl-model-parallelism.md
+        - file: paths/ai-infra/08-zero-fsdp-memory.md
+        - file: paths/ai-infra/09-quantization-peft.md
+        - file: paths/ai-infra/10-kv-cache-decoding.md
+        - file: paths/ai-infra/11-vllm-serving.md
+        - file: paths/ai-infra/12-moe-expert-parallelism.md
+        - file: paths/ai-infra/13-scaling-evaluation.md
+        - file: paths/ai-infra/14-post-training-rlhf.md
+        - file: paths/ai-infra/15-multimodal-bagel.md
+        - file: paths/ai-infra/16-diffusion-dit.md
     - title: 工作约定
       children:
         - file: projects/README.md
