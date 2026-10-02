@@ -28,6 +28,10 @@ main { background: var(--infra-background); }
 .article.content th { background: var(--infra-communication-fill); }
 .article.content figure { margin: 1.8em 0; }
 .article.content figcaption { color: var(--infra-muted); font-size: .88em; }
+@media (min-width: 1280px) {
+  .article.content { grid-template-columns: subgrid; }
+  .myst-primary-sidebar-nav { padding-inline-end: 1rem; }
+}
 
 .infra-widget { background: var(--infra-surface); color: var(--infra-text); font-family: var(--infra-font-body); border: 1px solid var(--infra-border); border-radius: 14px; padding: 20px; }
 .infra-widget * { box-sizing: border-box; }
